@@ -260,6 +260,16 @@ let g:markdown_folding = 1
 " " fugitive
 " set tags^=.git/tags;~
 
+" markdown specific -- hard wrapping
+autocmd FileType markdown setlocal fo+=Mm tw=72
+" use gw or gq to format 
+" [hard-wrapping](http://vimcasts.org/episodes/hard-wrapping-text/)
+" [autocm](https://learnvimscriptthehardway.stevelosh.com/chapters/12.html)
+" see :help fo-table
+"
+" to turn off automatic (soft) wrapping and highlight `Overlength`
+" see [text-width](http://blog.ezyang.com/2010/03/vim-textwidth/)
+
 "---------------------
 " Local customizations
 "---------------------
