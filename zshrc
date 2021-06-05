@@ -81,16 +81,6 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 export TMP_DIR="/home/star/Documents/tmp"
 export NOTES_DIR="$TMP_DIR/note_sys"
-function wno() { wn $1 -over}
-# alias wno="$TMP_DIR/wn.sh"
-alias jn="jupyter notebook"
-alias open=gnome-open
-alias py36="source activate py36"
-alias py38="source activate py38"
-alias bored="fortune | cowsay" # have some fun
-
-alias mv="mv -i" # prompt before overwrite
-alias mkdir="mkdir -p" # make parent dir
 
 
 # You may need to manually set your language environment
@@ -120,6 +110,28 @@ export NVM_DIR="$HOME/.nvm"
 alias zshconfig="vim ~/.zshrc"
 alias vimconfig="vim ~/.vimrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+function wno() { wn $1 -over}
+alias jn="jupyter notebook"
+alias open=gnome-open
+alias py36="source activate py36"
+alias py38="source activate py38"
+alias bored="fortune | cowsay" # have some fun
+
+alias mv="mv -i" # prompt before overwrite
+alias mkdir="mkdir -p" # make parent dir
+
+# set proxy
+alias setproxy="export http_proxy=http://localhost:2340 && export https_proxy=https://localhost:2340"
+alias unsetproxy="unset http_proxy && unset https_proxy"
+
+# golang modules
+alias gomodon="go env -w GO111MODULE=auto"
+alias gomodoff="go env -w GO111MODULE=off"
+
+# tmux
+alias t='tmux attach || tmux new-session' # attach to last session or start new one
+alias ts='tmux new-session -s' # create new session with name`$1`
+alias ta='tmux attach -t' # attach to target `$1`
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -146,13 +158,6 @@ export SDKMAN_DIR="/home/star/.sdkman"
 # brew
 eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
-# set proxy
-alias setproxy="export http_proxy=http://localhost:2340 && export https_proxy=https://localhost:2340"
-alias unsetproxy="unset http_proxy && unset https_proxy"
-
 # add ruby gems file to path
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/lib/ruby/gems/2.7.0/bin"
 
-# golang modules
-alias gomodon="go env -w GO111MODULE=auto"
-alias gomodoff="go env -w GO111MODULE=off"
