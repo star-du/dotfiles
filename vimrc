@@ -270,6 +270,14 @@ autocmd FileType markdown setlocal fo+=Mm tw=72
 " to turn off automatic (soft) wrapping and highlight `Overlength`
 " see [text-width](http://blog.ezyang.com/2010/03/vim-textwidth/)
 
+" paste
+" use F2 key to toggle paste mode so as indention is not corrupt
+nnoremap <F2> :set invpaste paste?<CR>
+" normal mode
+set pastetoggle=<F2>
+" insertion mode
+set showmode
+
 "---------------------
 " Local customizations
 "---------------------

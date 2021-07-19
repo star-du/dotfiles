@@ -76,13 +76,6 @@ plugins=(git autojump)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-export TMP_DIR="/home/star/Documents/tmp"
-export NOTES_DIR="$TMP_DIR/note_sys"
-
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -92,14 +85,10 @@ export NOTES_DIR="$TMP_DIR/note_sys"
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
-# Nodejs
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -112,17 +101,9 @@ alias vimconfig="vim ~/.vimrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 function wno() { wn $1 -over}
 alias jn="jupyter notebook"
-alias open=gnome-open
-alias py36="source activate py36"
-alias py38="source activate py38"
-alias bored="fortune | cowsay" # have some fun
 
 alias mv="mv -i" # prompt before overwrite
 alias mkdir="mkdir -p" # make parent dir
-
-# set proxy
-alias setproxy="export http_proxy=http://localhost:2340 && export https_proxy=https://localhost:2340"
-alias unsetproxy="unset http_proxy && unset https_proxy"
 
 # golang modules
 alias gomodon="go env -w GO111MODULE=auto"
@@ -133,31 +114,8 @@ alias t='tmux attach || tmux new-session' # attach to last session or start new 
 alias ts='tmux new-session -s' # create new session with name`$1`
 alias ta='tmux attach -t' # attach to target `$1`
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/media/star/OS/Users/admin/Desktop/temp/py/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/media/star/OS/Users/admin/Desktop/temp/py/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/media/star/OS/Users/admin/Desktop/temp/py/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/media/star/OS/Users/admin/Desktop/temp/py/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/star/.sdkman"
-[[ -s "/home/star/.sdkman/bin/sdkman-init.sh" ]] && source "/home/star/.sdkman/bin/sdkman-init.sh"
-
-# brew
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
-# add ruby gems file to path
-export PATH="$PATH:/home/linuxbrew/.linuxbrew/lib/ruby/gems/2.7.0/bin"
+# [[ ! -f ~/.zshrc_local ]] || source ~/.zshrc_local
 
