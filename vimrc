@@ -150,7 +150,7 @@ call plug#begin('~/.vim/plugged')
 Plug '907th/vim-auto-save'
 
 " Fuzzy file finding
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 " markdown syntax 
 Plug 'godlygeek/tabular' "必要插件，安装在vim-markdown前面
