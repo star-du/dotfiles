@@ -119,7 +119,7 @@ alias gomodoff="go env -w GO111MODULE=off"
 
 # tmux
 alias t='tmux attach || tmux new-session' # attach to last session or start new one
-alias ts='tmux new-session -s' # create new session with name`$1`
+alias ts='tmux new-session -s' # create new session with name `$1`
 alias ta='tmux attach -t' # attach to target `$1`
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.

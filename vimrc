@@ -291,13 +291,15 @@ endif
 "---------------------
 " Note System
 "---------------------
-" Go to index of notes and set working directory to my notes
-nnoremap <leader>ni :e $NOTES_DIR/index.md<CR>:cd $NOTES_DIR<CR>
+let enable_note_system = 0
+if enable_note_system
+    " Go to index of notes and set working directory to my notes
+    nnoremap <leader>ni :e $NOTES_DIR/index.md<CR>:cd $NOTES_DIR<CR>
 
-" Generate ctags silently
-nnoremap <leader>tt :silent !universal-ctags -R . <CR>:redraw!<CR>
-" Binding for searching tags ("search tag")
-nnoremap <leader>st :CtrlPTag<CR>
-" star: help vim find tags
-set tags+=./tags;,tags
-
+    " Generate ctags silently
+    nnoremap <leader>tt :silent !universal-ctags -R . <CR>:redraw!<CR>
+    " Binding for searching tags ("search tag")
+    nnoremap <leader>st :CtrlPTag<CR>
+    " star: help vim find tags
+    set tags+=./tags;,tags
+endif
