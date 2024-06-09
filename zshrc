@@ -79,7 +79,7 @@ export UPDATE_ZSH_DAYS=30
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git autojump)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -126,3 +126,7 @@ alias ta='tmux attach -t' # attach to target `$1`
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 [[ ! -f ~/.zshrc_local ]] || source ~/.zshrc_local
+
+# Shell integration (MacOS only, if applicable)
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
